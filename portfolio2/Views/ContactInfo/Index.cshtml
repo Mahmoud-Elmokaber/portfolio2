@@ -1,0 +1,58 @@
+﻿@model ContactInfo
+<!-- Contact Info Section -->
+<section id="contact-info">
+    <div class="container">
+        <h2 class="section-title text-dark">Contact Information</h2>
+        <div class="row g-4">
+            <!-- Email -->
+            <div class="col-md-6 col-lg-3">
+                <div class="contact-card shadow text-center">
+                    <i class="bi bi-envelope contact-icon"></i>
+                    <h3 class="h5 fw-semibold mb-2">Email</h3>
+                    <p class="mb-0">
+                        <a href="mailto:@Model.Email"
+                        class="text-decoration-none text-secondary">@Model.Email</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="col-md-6 col-lg-3">
+                <div class="contact-card shadow text-center">
+                    <i class="bi bi-telephone contact-icon"></i>
+                    <h3 class="h5 fw-semibold mb-2">Phone</h3>
+                    <p class="mb-0">
+                        <a href="tel:@Model.Phone" class="text-decoration-none text-secondary">
+                            @Model.Phone
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="col-md-6 col-lg-3">
+                <div class="contact-card shadow text-center">
+                    <i class="bi bi-geo-alt contact-icon"></i>
+                    <h3 class="h5 fw-semibold mb-2">Location</h3>
+                    <p class="mb-0 text-secondary">@Model.Location</p>
+                </div>
+            </div>
+
+            <!-- Availability -->
+            <div class="col-md-6 col-lg-3">
+                <div class="contact-card shadow text-center">
+                    <i class="bi bi-calendar-check contact-icon"></i>
+                    <h3 class="h5 fw-semibold mb-2">Availability</h3>
+                    @if(Model.IsAvailable)
+                    {
+                        <p class="mb-0 text-secondary">Available for Freelance</p>
+                    }
+                    else
+                    {
+                        <p class="mb-0 text-secondary"> Not Available</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

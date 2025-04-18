@@ -1,0 +1,45 @@
+﻿@model List<Project>
+<!-- Projects Section -->
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title">My Projects</h2>
+        <div class="row g-4">
+            @foreach (var project in Model)
+            {
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow project-card">
+                        @if (project.Id == 1)
+                        {
+                            <img src="~/images/E-commerceImage.jpg"
+                                 class="card-img-top project-img" alt="@project.Title">
+                        }
+                        else if (project.Id == 2)
+                        {
+                            <img src="~/images/Flight-booking database system.png"
+                                 class="card-img-top project-img" alt="@project.Title">
+                        }
+                        else
+                        {
+                            <img src="~/images/PortfolioImage.png"
+                                 class="card-img-top project-img" alt="@project.Title">
+                        }
+                        <div class="card-body">
+                            <h3 class="card-title fw-semibold">@project.Title</h3>
+                            <p class="card-text text-muted mb-3">
+                                @project.Description
+                            </p>
+                            <div>
+                                @foreach (var tag in project.technology)
+                                {
+                                    <span class="tag">@tag</span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</section>
