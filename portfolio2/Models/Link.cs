@@ -7,12 +7,6 @@
         public string? Description { get; set; }
         public int? ProjectId { get; set; }
         public Project? Project { get; set; }
-        public Link(int id , string url )
-        {
-            Url = string.Empty;
-            Description = string.Empty;
-            Id = id;
-            Url = url;
-        }
+   
     }
 }

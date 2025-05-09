@@ -1,4 +1,5 @@
-﻿<!-- Contact Form Section -->
+﻿@model Form
+<!-- Contact Form Section -->
 <section id="contact-form">
     <div class="container">
         <h2 class="section-title">Get In Touch</h2>
@@ -6,47 +7,48 @@
             <div class="col-lg-8">
                 <div class="card shadow border-0">
                     <div class="card-body p-4 p-md-5">
-                        <form id="contactForm">
+
+                        <form id="contactForm" method="post" asp-action="Index">
                             <div class="row g-4">
                                 <!-- Name -->
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name"
+                                        <input asp-for="SenderName" type="text" class="form-control"  placeholder="Your Name"
                                                required>
-                                        <label for="name">Your Name</label>
+                                        <label for="SenderName">Your Name</label>
                                     </div>
                                 </div>
 
                                 <!-- Email -->
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email"
+                                        <input asp-for="SenderEmail" type="email" class="form-control" placeholder="Your Email"
                                                required>
-                                        <label for="email">Your Email</label>
+                                        <label for="SenderEmail">Your Email</label>
                                     </div>
                                 </div>
 
                                 <!-- Subject -->
                                 <div class="col-12">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject"
+                                        <input asp-for ="Subject" type="text" class="form-control"  placeholder="Subject"
                                                required>
-                                        <label for="subject">Subject</label>
+                                        <label for="Subject">Subject</label>
                                     </div>
                                 </div>
 
                                 <!-- Message -->
                                 <div class="col-12">
                                     <div class="form-floating mb-3">
-                                        <textarea class="form-control" id="message" placeholder="Your Message"
+                                        <textarea asp-for="Message" class="form-control"  placeholder="Your Message"
                                                   style="height: 150px" required></textarea>
-                                        <label for="message">Your Message</label>
+                                        <label for="Message">Your Message</label>
                                     </div>
                                 </div>
 
                                 <!-- Submit Button -->
                                 <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-custom btn-lg px-5">Send Message</button>
+                                    <button onclick="alert('Got Your message , You will be contacted soon')" type="submit" class="btn btn-custom btn-lg px-5">Send Message</button>
                                 </div>
                             </div>
                         </form>
